@@ -626,3 +626,175 @@ x==========x]
 [2026-05-20 06:55:49,864: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2026-05-20 08:01:39,779: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.6:8080]
+[2026-05-20 08:01:39,779: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-05-20 08:02:21,332: INFO: _internal: 192.168.1.6 - - [20/May/2026 08:02:21] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:02:43,156: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:02:43] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:03:21,403: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\DL Proj\kidney-disease-classification-deeplearning\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\DL Proj\kidney-disease-classification-deeplearning\src\cnnClasifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2026-05-20 08:03:21,435: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:03:21] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-05-20 08:06:30,819: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:06:30] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:06:47,853: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:06:47] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:06:58,647: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\DL Proj\kidney-disease-classification-deeplearning\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\DL Proj\kidney-disease-classification-deeplearning\src\cnnClasifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2026-05-20 08:06:58,647: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:06:58] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-05-20 08:07:02,335: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:07:02] "[33mCONNECT sadownload.mcafee.com:443 HTTP/1.1[0m" 404 -]
+[2026-05-20 08:07:02,355: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:07:02] "[33mCONNECT sadownload.mcafee.com:443 HTTP/1.1[0m" 404 -]
+[2026-05-20 08:11:11,428: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.6:8080]
+[2026-05-20 08:11:11,428: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-05-20 08:11:18,128: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:11:18] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:11:31,186: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\DL Proj\kidney-disease-classification-deeplearning\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\DL Proj\kidney-disease-classification-deeplearning\src\cnnClasifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Palle Shashank\miniconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2026-05-20 08:11:31,208: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:11:31] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-05-20 08:17:13,500: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.6:8080]
+[2026-05-20 08:17:13,500: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-05-20 08:17:17,550: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:17:17] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:17:36,478: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:17:36] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:17:53,147: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:17:53] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:18:15,112: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:18:15] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:18:31,124: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:18:31] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:18:33,978: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000023444B8B6D0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-05-20 08:18:33,978: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:18:33] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:18:36,375: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000023445B6C670> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-05-20 08:18:36,375: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:18:36] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:18:56,758: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:18:56] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:19:08,585: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:19:08] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:20:29,578: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:20:29] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:22:42,230: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.6:8080]
+[2026-05-20 08:22:42,231: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-05-20 08:22:46,299: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:22:46] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:22:59,364: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:22:59] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:23:12,736: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:23:12] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:23:24,114: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:23:24] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:23:27,168: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:23:27] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:23:38,667: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:23:38] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:24:14,132: INFO: stage_03_model_training: *******************]
+[2026-05-20 08:24:14,132: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2026-05-20 08:24:14,157: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-05-20 08:24:14,172: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-20 08:24:14,178: INFO: common: created directory at: artifacts]
+[2026-05-20 08:24:14,178: INFO: common: created directory at: artifacts\training]
+[2026-05-20 08:35:37,619: INFO: stage_02_prepare_base_model: *******************]
+[2026-05-20 08:35:37,619: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2026-05-20 08:35:37,619: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-05-20 08:35:37,638: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-20 08:35:37,638: INFO: common: created directory at: artifacts]
+[2026-05-20 08:35:37,640: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-05-20 08:35:38,408: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-20 08:35:38,826: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-05-20 08:35:51,374: INFO: stage_03_model_training: *******************]
+[2026-05-20 08:35:51,374: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2026-05-20 08:35:51,384: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-05-20 08:35:51,389: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-20 08:35:51,389: INFO: common: created directory at: artifacts]
+[2026-05-20 08:35:51,391: INFO: common: created directory at: artifacts\training]
+[2026-05-20 08:47:06,472: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-05-20 08:47:23,512: INFO: stage_04_model_evaluation: *******************]
+[2026-05-20 08:47:23,525: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-05-20 08:47:23,528: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-05-20 08:47:23,533: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-20 08:47:23,536: INFO: common: created directory at: artifacts]
+[2026-05-20 08:48:01,206: INFO: common: json file saved at: scores.json]
+[2026-05-20 08:48:01,209: INFO: common: json file saved at: scores.json]
+[2026-05-20 08:48:01,209: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-05-20 08:55:57,331: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.6:8080]
+[2026-05-20 08:55:57,331: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-05-20 08:56:00,344: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:56:00] "GET / HTTP/1.1" 200 -]
+[2026-05-20 08:56:14,731: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:56:14] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:56:33,766: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:56:33] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:56:48,373: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:56:48] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:57:02,703: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:57:02] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:57:27,157: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000014B02E376D0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-05-20 08:57:27,168: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:57:27] "POST /predict HTTP/1.1" 200 -]
+[2026-05-20 08:57:51,014: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:57:51] "[33mCONNECT sadownload.mcafee.com:443 HTTP/1.1[0m" 404 -]
+[2026-05-20 08:57:51,028: INFO: _internal: 127.0.0.1 - - [20/May/2026 08:57:51] "[33mCONNECT sadownload.mcafee.com:443 HTTP/1.1[0m" 404 -]

@@ -60,6 +60,7 @@ class Training:
             shuffle=True,
             **dataflow_kwargs
         )
+        print(self.train_generator.class_indices)
 
     
     @staticmethod
